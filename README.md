@@ -9,16 +9,16 @@ A cross-browser solution for synchronizing cross-document synchronization betwee
 ## Usage Example
 In your "main" frame:
 
-  var _main = 
-    FrameSync('ANY_UNIQUE_NAME').register('main')
-      .onload(function(){
-        console.log('synchronized with child!');
-      });
-  document.body.onload = _main.loaded;
+    var _main = 
+      FrameSync('ANY_UNIQUE_NAME').register('main')
+        .onload(function(){
+          console.log('synchronized with child!');
+        });
+    document.body.onload = _main.loaded;
 
 In your "child" frame:
 
-  FrameSync('ANY_UNIQUE_NAME').wait('main')
-    .onload(function(){
-        console.log('synchronized with main!');
-    });
+    FrameSync('ANY_UNIQUE_NAME').wait('main')
+      .onload(function(){
+          console.log('synchronized with main!');
+      });
