@@ -1,5 +1,9 @@
 # frameSync
-A cross-browser solution for synchronizing cross-document synchronization between multiple sites/iframes
+A cross-browser solution for synchronizing cross-document synchronization between multiple sites/iframes.
+
+
+#Demo: Synchronized CSS Animations in two different windows
+
 
 
 #Use Cases
@@ -9,16 +13,19 @@ A cross-browser solution for synchronizing cross-document synchronization betwee
 ## Usage Example
 In your "main" frame:
 
-    var _main = 
-      FrameSync('ANY_UNIQUE_NAME').register('main')
-        .onload(function(){
-          console.log('synchronized with child!');
-        });
-    document.body.onload = _main.loaded;
+    //register needs to be called at page start, not at page window load!
+    var _root = FrameSync('testNamespace').register('root');
+
+    //set a function that is meant to be called when child is ready
+    _root.onload(function(){
+        console.log('child is ready / synced');
+    });
+
+    document.body.onload = _root.loaded; //set an event-trigger when root is ready
 
 In your "child" frame:
 
-    FrameSync('ANY_UNIQUE_NAME').wait('main')
-      .onload(function(){
+    FrameSync('testNamespace').wait('root')
+      .onload(function(){ //set a function that is meant to be called when root is ready
           console.log('synchronized with main!');
       });
