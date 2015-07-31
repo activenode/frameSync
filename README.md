@@ -1,10 +1,11 @@
 # frameSync
-A cross-browser solution for synchronizing cross-document synchronization between multiple sites/iframes.
+A cross-browser solution for cross-document onLoad synchronization between multiple sites/iframes.
 
 
 #Demo: Synchronized CSS Animations in two different windows
 ![demo](https://raw.githubusercontent.com/activenode/frameSync/master/samplegif.gif)
 
+Of course it does work either way. It does not matter if root or child frame is the first to finish. 
 
 #Use Cases
 - You created html/css ad formats and you want their animation to start synchronous even if they are in different iframes/documents
