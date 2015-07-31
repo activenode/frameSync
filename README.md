@@ -3,7 +3,7 @@ A cross-browser solution for synchronizing cross-document synchronization betwee
 
 
 #Demo: Synchronized CSS Animations in two different windows
-
+![demo](https://raw.githubusercontent.com/activenode/frameSync/master/samplegif.gif)
 
 
 #Use Cases
